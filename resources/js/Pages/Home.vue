@@ -6,21 +6,6 @@ defineOptions({ layout: Demo })
 </script>
 
 <template>
-    <!-- Navbar -->
-    <header class="bg-gray-900 text-white py-6 shadow-md">
-        <nav class="container mx-auto flex justify-between items-center">
-            <div class="text-2xl font-bold">
-                <a href="#">Loredaop</a>
-            </div>
-            <ul class="flex gap-6">
-                <li><a href="#home" class="hover:text-blue-400">Home</a></li>
-                <li><a href="#about" class="hover:text-blue-400">About</a></li>
-                <li><a href="#projects" class="hover:text-blue-400">Projects</a></li>
-                <li><a href="#contact" class="hover:text-blue-400">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
     <!-- Hero Section -->
     <section id="home" class="bg-blue-900 text-white py-20">
         <div class="container mx-auto text-center">

@@ -1,26 +1,28 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    sleep(2);
     return Inertia::render('Home');
-})->name('home') ;
+})->name('home');
 
 
 Route::get('/about', function () {
-    sleep(2);
     return Inertia::render('About');
-})->name('about') ;
+})->name('about');
 
 Route::get('/contact', function () {
-    sleep(2);
     return Inertia::render('Contact', [
         'email' => 'support@shoppinggonj.com',
         'phone' => '+1 123 456 7890',
         'address' => '123 E-Commerce Street, City, Country',
     ]);
-})->name('contact') ;
+})->name('contact');
 
+Route::get('/register', function () {
+    return Inertia::render('Auth/Register');
+})->name('register');
 
+Route::post("/register", [AuthController::class, "register"])->name("register");

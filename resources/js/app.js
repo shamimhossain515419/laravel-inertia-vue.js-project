@@ -2,6 +2,7 @@ import { createApp, h } from 'vue';
 import { createInertiaApp, Head, Link } from '@inertiajs/vue3';
 import '../css/app.css'; // Import your CSS
 import Layout from '@/Layouts/Layout.vue'; // Global Layout
+import  {ZiggyVue} from "../../vendor/tightenco/ziggy"
 // Create Inertia App
 createInertiaApp({
     title: (title) => `My App - ${title}`, // Page titles formatted as "My App - Page Title"
@@ -15,6 +16,7 @@ createInertiaApp({
         // Create the Vue app
         createApp({ render: () => h(App, props) })
             .use(plugin) // Use Inertia plugin
+            .use(ZiggyVue)
             .component('Head', Head) // Register Inertia components globally
             .component('Link', Link)
             .mount(el); // Mount the app

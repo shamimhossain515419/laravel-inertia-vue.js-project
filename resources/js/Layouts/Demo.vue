@@ -5,11 +5,14 @@
 <template>
     <div class=" ">
         <header class=" bg-red-500 text-white py-3">
-            <nav class="  container mx-auto">
+            <nav class="  container mx-auto flex justify-between  items-center gap-2 px-4">
                 <div class=" flex items-center gap-2 text-xl">
-                    <a href="/">Home Page</a>
-                    <a href="/about">About Page</a>
-                    <a href="/contact">Contact Page</a>
+                    <Link :href="route('home')">Home Page</Link>
+                    <Link :href="route('about')">About Page</Link>
+                    <Link :href="route('contact')">Contact Page</Link>
+                </div>
+                <div>
+                    <Link :href="route('register')">Sign/signup</Link>
                 </div>
             </nav>
         </header>

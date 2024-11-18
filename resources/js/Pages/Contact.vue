@@ -1,5 +1,5 @@
 <script setup>
-import { Head } from "@inertiajs/vue3";
+import {Head} from "@inertiajs/vue3";
 
 // Define props
 defineProps({
@@ -10,7 +10,7 @@ defineProps({
 </script>
 
 <template>
-    <Head :title="'Contact Us | Shopping Gonj'" />
+    <Head :title="'Contact Us | Shopping Gonj'"/>
 
     <section class="contact-page">
         <h1>Contact Us</h1>
@@ -20,6 +20,8 @@ defineProps({
             <li><strong>Phone:</strong> {{ phone }}</li>
             <li><strong>Address:</strong> {{ address }}</li>
         </ul>
+
+        <Link class="mt-[600px] block" :href="route('contact')"  preserve-scroll> Refresh</Link>
     </section>
 </template>
 

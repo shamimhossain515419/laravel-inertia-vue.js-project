@@ -9,7 +9,6 @@ const pageImage = "https://www.yoursite.com/images/about-page-thumbnail.jpg"; //
 
 <template>
     <Head title="| About page">
-
         <meta name="description" content="{{ pageDescription }}"/>
         <meta name="keywords" content="{{ pageKeywords }}"/>
         <meta name="author" content="Shopping Gonj E-Commerce"/>
