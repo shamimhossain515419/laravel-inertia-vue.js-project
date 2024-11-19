@@ -4,15 +4,13 @@ import {useForm} from "@inertiajs/vue3";
 import TextInput from "@/Pages/Components/TextInput.vue";
 
 const form = useForm({
-    name: null,
     email: null,
     password: null,
-    password_confirmation: null
 })
 const submit = () => {
 
-    form.post(route('register'), {
-        onError: () => form.reset("password", "password_confirmation")
+    form.post(route('login'), {
+        onError: () => form.reset("password")
     })
 }
 </script>
@@ -21,10 +19,8 @@ const submit = () => {
     <Head title="register"/>
     <div class="  w-[600px] mx-auto  mt-9">
         <form @submit.prevent="submit">
-            <h1> Register a new account </h1>
-
-                <TextInput name="Your name" v-model="form.name" :message="form.errors.name"/>
-                <TextInput name="Email" v-model="form.email" :message="form.errors.email"/>
+            <h1> Login to your account </h1>
+            <TextInput name="Email" v-model="form.email" :message="form.errors.email"/>
 
             <div>
                 <label for="password" class=" block text-sm">Password</label>
@@ -32,18 +28,15 @@ const submit = () => {
                        class=" border border-black px-2.5 py-1  w-full block focus:border-blue-600  outline-0 rounded my-1">
                 <small class="text-red-500 text-sm"> {{ form.errors.password }} </small>
             </div>
-            <div>
-                <label for="password" class=" block text-sm">Confirm password</label>
-                <input v-model="form.password_confirmation" type="password" name="password_confirmation" id="password"
-                       class=" border border-black px-2.5 py-1  w-full block focus:border-blue-600  outline-0 rounded my-1">
-                <small class="text-red-500 text-sm"> {{ form.errors.password_confirmation }} </small>
-            </div>
-
-                <p> Already an account  <Link :href="route('login')" class="text-blue-600">login </Link> </p>
-
+            <p> Need an account
+                <Link :href="route('register')" class="text-blue-600">
+                    Register
+                </Link>
+            </p>
             <div class="mt-2 relative">
-                <button class="bg-blue-500 px-2 disabled:bg-blue-200 py-1 text-white w-full text-center rounded flex items-center justify-center"
-                        :disabled="form.processing">
+                <button
+                    class="bg-blue-500 px-2 disabled:bg-blue-200 py-1 text-white w-full text-center rounded flex items-center justify-center"
+                    :disabled="form.processing">
                     <span v-if="form.processing" class="loader mr-2"></span>
                     Submit
                 </button>
