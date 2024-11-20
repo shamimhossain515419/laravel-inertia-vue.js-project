@@ -15,9 +15,9 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
+        User::factory(100)->create([
             'name' => 'Test User',
-            'email' => 'test@example.com',
+            'email' => fn () => 'test' . fake()->unique()->numberBetween(1, 100) . '@example.com',
         ]);
     }
 }

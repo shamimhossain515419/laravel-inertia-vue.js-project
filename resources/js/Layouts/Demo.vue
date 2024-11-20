@@ -10,6 +10,8 @@
                     <Link :href="route('home')">Home Page</Link>
                     <Link :href="route('about')">About Page</Link>
                     <Link :href="route('contact')">Contact Page</Link>
+                    <Link :href="route('dashboard')">Dashboard</Link>
+
                 </div>
                 <div>
                     <Link :href="route('register')">Sign/signup</Link>

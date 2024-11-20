@@ -32,3 +32,9 @@ Route::get('/login', function () {
 })->name('login');
 
 Route::post("/login", [AuthController::class, "login"])->name("login");
+
+
+//dashboard
+Route::get('/dashboard', function () {
+    return Inertia::render('Dashboard/Dashboard');
+})->name('dashboard');
